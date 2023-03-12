@@ -60,4 +60,22 @@ public class CharacterSelection : MonoBehaviour
         PlayerPrefs.SetInt("CharacterSelect", index);
         SceneManager.LoadScene("MainScene");
     }
+    public void Botao1()
+    {
+        characterList[index].SetActive(false);
+        index = 0;
+        characterList[index].SetActive(true);
+    }
+    public void Botao2()
+    {
+        characterList[index].SetActive(false);
+        index = 1;
+        characterList[index].SetActive(true);
+    }
+    public void Botao3()
+    {
+        characterList[index].SetActive(false);
+        index = 2;
+        characterList[index].SetActive(true);
+    }
 }
