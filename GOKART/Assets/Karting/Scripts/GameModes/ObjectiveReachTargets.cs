@@ -8,7 +8,7 @@ public class ObjectiveReachTargets : Objective
     public bool mustCollectAllPickups = true;
     
     [Tooltip("If MustCollectAllPickups is false, this is the amount of pickups required")]
-    public int pickupsToCompleteObjective = 5;
+    public int pickupsToCompleteObjective = 3;
     
     [Header("Notification")]
     [Tooltip("Start sending notification about remaining pickups when this amount of pickups is left")]
