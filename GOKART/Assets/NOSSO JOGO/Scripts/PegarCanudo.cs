@@ -5,6 +5,7 @@ using UnityEngine;
 public class PegarCanudo : MonoBehaviour
 {
     public int value;
+    
     // Start is called before the first frame update
     void Start()
     {
