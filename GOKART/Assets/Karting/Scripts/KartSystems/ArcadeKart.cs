@@ -52,6 +52,8 @@ namespace KartGame.KartSystems
             [Tooltip("Additional gravity for when the kart is in the air.")]
             public float AddedGravity;
 
+            
+
             // allow for stat adding for powerups.
             public static Stats operator +(Stats a, Stats b)
             {
@@ -180,6 +182,10 @@ namespace KartGame.KartSystems
         Vector3 m_LastCollisionNormal;
         bool m_HasCollision;
         bool m_InAir = false;
+
+
+        // Extra Things I Added
+        public float currentSpeed, boostTime, driftTime;
 
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
@@ -312,13 +318,26 @@ namespace KartGame.KartSystems
             // apply vehicle physics
             if (m_CanMove)
             {
-                MoveVehicle(Input.Accelerate, Input.Brake, Input.TurnInput);
+                if(((int)currentSpeed) == 0)
+                    MoveVehicle(Input.Accelerate, Input.Brake, 0f);
+                if(((int)currentSpeed) != 0)
+                {
+                    MoveVehicle(Input.Accelerate, Input.Brake, Input.TurnInput); 
+                }
             }
             GroundAirbourne();
 
             m_PreviousGroundPercent = GroundPercent;
 
             UpdateDriftVFXOrientation();
+
+            if(IsDrifting)
+            {
+                driftTime += Time.fixedDeltaTime;
+            }
+
+            Boost();
+
         }
 
         void GatherInputs()
@@ -428,7 +447,7 @@ namespace KartGame.KartSystems
             float maxSpeed = localVelDirectionIsFwd ? m_FinalStats.TopSpeed : m_FinalStats.ReverseSpeed;
             float accelPower = accelDirectionIsFwd ? m_FinalStats.Acceleration : m_FinalStats.ReverseAcceleration;
 
-            float currentSpeed = Rigidbody.velocity.magnitude;
+            currentSpeed = Rigidbody.velocity.magnitude;
             float accelRampT = currentSpeed / maxSpeed;
             float multipliedAccelerationCurve = m_FinalStats.AccelerationCurve * accelerationCurveCoeff;
             float accelRamp = Mathf.Lerp(multipliedAccelerationCurve, 1, accelRampT * accelRampT);
@@ -516,9 +535,10 @@ namespace KartGame.KartSystems
                 // Drift Management
                 if (!IsDrifting)
                 {
-                    if ((WantsToDrift || isBraking) && currentSpeed > maxSpeed * MinSpeedPercentToFinishDrift)
+                    if ((WantsToDrift || isBraking) && currentSpeed > maxSpeed * MinSpeedPercentToFinishDrift && Input.TurnInput != 0)
                     {
                         IsDrifting = true;
+                        print(IsDrifting);
                         m_DriftTurningPower = turningPower + (Mathf.Sign(turningPower) * DriftAdditionalSteer);
                         m_CurrentGrip = DriftGrip;
 
@@ -528,6 +548,11 @@ namespace KartGame.KartSystems
 
                 if (IsDrifting)
                 {
+                    
+                    float driftBoostS = 1f;
+                    float driftBoostM = 1.5f;
+                    float driftBoostL = 2.5f;
+
                     float turnInputAbs = Mathf.Abs(turnInput);
                     if (turnInputAbs < k_NullInput)
                         m_DriftTurningPower = Mathf.MoveTowards(m_DriftTurningPower, 0.0f, Mathf.Clamp01(DriftDampening * Time.fixedDeltaTime));
@@ -551,6 +576,27 @@ namespace KartGame.KartSystems
                         // No Input, and car aligned with speed direction => Stop the drift
                         IsDrifting = false;
                         m_CurrentGrip = m_FinalStats.Grip;
+
+                        if(driftTime < 2f)
+                        {
+                            boostTime = driftBoostS;
+                            print("SmallBoost");
+                        }
+                        else if(driftTime >= 2 && driftTime < 6)
+                        {
+                            boostTime = driftBoostM;
+                            print("MediumBoost");
+                            print(driftTime);
+                        }
+                        else if(driftTime >=6)
+                        {
+                            boostTime = driftBoostL;
+                            print("LargeBoost");
+                            print(driftTime);
+                        }
+                        
+                        driftTime = 0f;
+
                     }
 
                 }
@@ -595,6 +641,23 @@ namespace KartGame.KartSystems
             }
 
             ActivateDriftVFX(IsDrifting && GroundPercent > 0.0f);
+        }
+
+        void Boost()
+        {
+            boostTime -= Time.deltaTime;
+            if (boostTime > 0)
+            {
+                m_FinalStats.TopSpeed += 130f;
+                currentSpeed = Mathf.Lerp(currentSpeed, m_FinalStats.TopSpeed, 1 * Time.deltaTime);
+                //print(currentSpeed);
+            }
+            else
+            {
+                m_FinalStats.TopSpeed -= 20f;
+                //print(currentSpeed);
+            }
+                
         }
     }
 }
