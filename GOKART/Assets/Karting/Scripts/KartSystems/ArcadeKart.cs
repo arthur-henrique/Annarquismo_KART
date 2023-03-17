@@ -659,5 +659,13 @@ namespace KartGame.KartSystems
             }
                 
         }
+
+        //void Jump()
+        //{
+        //    if (GroundPercent > 0.0f && Input.ButtonDown("Jump"))
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }
