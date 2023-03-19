@@ -165,6 +165,7 @@ namespace KartGame.KartSystems
 
         // Drift params
         public bool WantsToDrift { get; private set; } = false;
+        public bool WantsToJump { get; private set; } = false;
         public bool IsDrifting { get; private set; } = false;
         float m_CurrentGrip = 1.0f;
         float m_DriftTurningPower = 0.0f;
@@ -185,7 +186,7 @@ namespace KartGame.KartSystems
 
 
         // Extra Things I Added
-        public float currentSpeed, boostTime, driftTime;
+        public float currentSpeed, boostTime, driftTime, jumpForce;
 
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
@@ -345,12 +346,15 @@ namespace KartGame.KartSystems
             // reset input
             Input = new InputData();
             WantsToDrift = false;
+            WantsToJump = false;
 
             // gather nonzero input from our sources
             for (int i = 0; i < m_Inputs.Length; i++)
             {
                 Input = m_Inputs[i].GenerateInput();
                 WantsToDrift = Input.Brake && Vector3.Dot(Rigidbody.velocity, transform.forward) > 0.0f;
+                WantsToJump = Input.Jump && !m_InAir && currentSpeed >= 6f;
+
             }
         }
 
@@ -531,14 +535,21 @@ namespace KartGame.KartSystems
                         m_DriftTurningPower = 0.0f;
                     }
                 }
+                // Jump Management
 
+                if(WantsToJump)
+                {
+                    WantsToJump= false;
+                    Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y + jumpForce, Rigidbody.velocity.z);
+                    
+                    print("Jump");
+                }
                 // Drift Management
                 if (!IsDrifting)
                 {
                     if ((WantsToDrift || isBraking) && currentSpeed > maxSpeed * MinSpeedPercentToFinishDrift && Input.TurnInput != 0)
                     {
                         IsDrifting = true;
-                        print(IsDrifting);
                         m_DriftTurningPower = turningPower + (Mathf.Sign(turningPower) * DriftAdditionalSteer);
                         m_CurrentGrip = DriftGrip;
 

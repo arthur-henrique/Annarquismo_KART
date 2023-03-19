@@ -15,7 +15,7 @@ namespace KartGame.KartSystems {
                 Accelerate = Input.GetButton(AccelerateButtonName),
                 Brake = Input.GetButton(BrakeButtonName),
                 TurnInput = Input.GetAxis("Horizontal"),
-                // Jump = Input.GetButton("Jump")
+                Jump = Input.GetButton("Jump")
             };
         }
     }
