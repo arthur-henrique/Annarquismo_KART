@@ -7,7 +7,8 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] characterList;
     public int index;
-  
+    public string novaCena;
+    
    
     
 
@@ -58,24 +59,42 @@ public class CharacterSelection : MonoBehaviour
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelect", index);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(novaCena);
     }
-    public void Botao1()
+    public void Botao0()
     {
         characterList[index].SetActive(false);
         index = 0;
         characterList[index].SetActive(true);
     }
-    public void Botao2()
+    public void Botao1()
     {
         characterList[index].SetActive(false);
         index = 1;
         characterList[index].SetActive(true);
     }
-    public void Botao3()
+    public void Botao2()
     {
         characterList[index].SetActive(false);
         index = 2;
+        characterList[index].SetActive(true);
+    }
+    public void Botao3()
+    {
+        characterList[index].SetActive(false);
+        index = 3;
+        characterList[index].SetActive(true);
+    }
+    public void Botao4()
+    {
+        characterList[index].SetActive(false);
+        index = 4;
+        characterList[index].SetActive(true);
+    }
+    public void Botao5()
+    {
+        characterList[index].SetActive(false);
+        index = 5;
         characterList[index].SetActive(true);
     }
 }

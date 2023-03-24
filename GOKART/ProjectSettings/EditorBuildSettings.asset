@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Karting/Scenes/IntroMenu.unity
     guid: d29260d8d84c94bd7ac95807b3da99d4
   - enabled: 1
-    path: Assets/Karting/Scenes/CharaSelection.unity
+    path: Assets/NOSSO JOGO/Sneces/CharaSelection.unity
     guid: 89363bf43603bc543918eebd1870ca87
+  - enabled: 1
+    path: Assets/NOSSO JOGO/Sneces/pista_1.unity
+    guid: c4bcea306a7075f489299bab84b9dd22
+  - enabled: 1
+    path: Assets/NOSSO JOGO/Sneces/pista_2.unity
+    guid: ce6163edb9fbd4e4b9a4cb9ece76c98b
   - enabled: 1
     path: Assets/Karting/Scenes/MainScene.unity
     guid: 92786e23da2af4a4f8803aaf44c47121
