@@ -819,12 +819,12 @@ MonoBehaviour:
   - {fileID: 0}
   CenterOfMass: {fileID: 2828412311806126312}
   AirborneReorientationCoefficient: 1
-  DriftGrip: 0.7
-  DriftAdditionalSteer: 0.4
-  MinAngleToFinishDrift: 5
+  DriftGrip: 0.5
+  DriftAdditionalSteer: 0
+  MinAngleToFinishDrift: 30
   MinSpeedPercentToFinishDrift: 0.6
-  DriftControl: 16
-  DriftDampening: 8
+  DriftControl: 2
+  DriftDampening: 16
   DriftSparkVFX: {fileID: 5720418349283321134, guid: 83d0ce15c25af954bbd1425a9ddf8458,
     type: 3}
   DriftSparkHorizontalOffset: 0.15

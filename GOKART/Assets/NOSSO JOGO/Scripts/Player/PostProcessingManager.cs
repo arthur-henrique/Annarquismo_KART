@@ -76,7 +76,7 @@ public class PostProcessingManager : MonoBehaviour
     void DriftVolumeSettings()
     {
         StartCoroutine(NormalVolumeSettings());
-        aberration.intensity.value = Mathf.Lerp(0f, 3f, 10f);
+        //aberration.intensity.value = Mathf.Lerp(0f, 3f, 10f);
         blur.intensity.value = Mathf.Lerp(0f, 1f, 10f);
         blur.active = true;
         distortion.intensity.value = Mathf.Lerp(0f, -0.2f, 10f);

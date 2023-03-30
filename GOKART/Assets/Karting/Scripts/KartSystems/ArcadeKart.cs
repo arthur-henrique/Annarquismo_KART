@@ -568,6 +568,7 @@ namespace KartGame.KartSystems
                     if (turnInputAbs < k_NullInput)
                         m_DriftTurningPower = Mathf.MoveTowards(m_DriftTurningPower, 0.0f, Mathf.Clamp01(DriftDampening * Time.fixedDeltaTime));
 
+                    
                     // Update the turning power based on input
                     float driftMaxSteerValue = m_FinalStats.Steer + DriftAdditionalSteer;
                     m_DriftTurningPower = Mathf.Clamp(m_DriftTurningPower + (turnInput * Mathf.Clamp01(DriftControl * Time.fixedDeltaTime)), -driftMaxSteerValue, driftMaxSteerValue);
@@ -579,6 +580,8 @@ namespace KartGame.KartSystems
                         canEndDrift = false;
                     else if (!facingVelocity)
                         canEndDrift = false;
+                    else if (turnInputAbs < k_NullInput)
+                        canEndDrift = true;
                     else if (turnInputAbs >= k_NullInput && currentSpeed > maxSpeed * MinSpeedPercentToFinishDrift)
                         canEndDrift = false;
 
