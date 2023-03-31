@@ -176,7 +176,7 @@ namespace KartGame.KartSystems
         // can the kart move?
         bool m_CanMove = true;
         List<StatPowerup> m_ActivePowerupList = new List<StatPowerup>();
-        ArcadeKart.Stats m_FinalStats;
+        public ArcadeKart.Stats m_FinalStats;
 
         Quaternion m_LastValidRotation;
         Vector3 m_LastValidPosition;
@@ -187,6 +187,7 @@ namespace KartGame.KartSystems
 
         // Extra Things I Added
         public float currentSpeed, boostTime, driftTime, jumpForce;
+        public float boostPower = 1230f;
 
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
@@ -662,14 +663,14 @@ namespace KartGame.KartSystems
             boostTime -= Time.deltaTime;
             if (boostTime > 0)
             {
-                m_FinalStats.TopSpeed += 1230f;
-                currentSpeed = Mathf.Lerp(currentSpeed, m_FinalStats.TopSpeed, 1 * Time.deltaTime);
-                print(currentSpeed);
+                m_FinalStats.TopSpeed += boostPower;
+                currentSpeed += boostPower;
+                //print(currentSpeed);
             }
             else
             {
                 m_FinalStats.TopSpeed -= 20f;
-                print(currentSpeed);
+                //print(currentSpeed);
             }
                 
         }

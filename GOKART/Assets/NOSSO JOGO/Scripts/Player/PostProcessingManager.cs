@@ -1,53 +1,52 @@
 using Cinemachine.PostFX;
-using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Rendering;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using KartGame.KartSystems;
-using JetBrains.Annotations;
 
 public class PostProcessingManager : MonoBehaviour
 {
     public static PostProcessingManager Instance;
+
     public CinemachineVolumeSettings volumeSettings;
     private ChromaticAberration aberration;
     private MotionBlur blur;
     private LensDistortion distortion;
-    public ArcadeKart kart;
 
+    public ArcadeKart kart;
     public bool canProcess = true;
 
-    //public Vector3 intensityValue
-
+    // Constants to replace magic numbers
+    private const float DRIFT_ABERRATION_INTENSITY = 0f;
+    private const float DRIFT_BLUR_INTENSITY = 1f;
+    private const float DRIFT_DISTORTION_INTENSITY = -0.2f;
+    private const float NORMAL_ABERRATION_INTENSITY = 0f;
+    private const float NORMAL_BLUR_INTENSITY = 0f;
+    private const float NORMAL_DISTORTION_INTENSITY = 0f;
+    private const float LERP_TIME = 3f;
 
     private void Awake()
     {
         Instance = this;
     }
+
     private void Start()
     {
-        ChromaticAberration tmp;
-        if (volumeSettings.m_Profile.TryGet<ChromaticAberration>(out tmp))
+        // Retrieve post-processing effects from volume settings
+        if (volumeSettings.m_Profile.TryGet<ChromaticAberration>(out var tmp))
         {
             aberration = tmp;
-            //aberration.intensity = new ClampedFloatParameter(0f, 0f, 1f, true);
         }
 
-        MotionBlur tpmBlur;
-        if (volumeSettings.m_Profile.TryGet<MotionBlur>(out tpmBlur))
+        if (volumeSettings.m_Profile.TryGet<MotionBlur>(out var tpmBlur))
         {
             blur = tpmBlur;
-            //blur.intensity = new ClampedFloatParameter(0f, 0f, 1f, true);
         }
 
-        LensDistortion tpmDist;
-        if (volumeSettings.m_Profile.TryGet<LensDistortion>(out tpmDist))
+        if (volumeSettings.m_Profile.TryGet<LensDistortion>(out var tpmDist))
         {
             distortion = tpmDist;
-            //distortion.intensity = new ClampedFloatParameter(0f, -1f, 1f, true);
         }
-
     }
 
     private void Update()
@@ -55,30 +54,45 @@ public class PostProcessingManager : MonoBehaviour
         if (kart.boostTime > 0f && canProcess)
         {
             canProcess = false;
-            DriftVolumeSettings();
-            print("VolumeOn");
-            
+            StartCoroutine(ApplyDriftEffect());
         }
     }
 
-    IEnumerator NormalVolumeSettings()
+    private IEnumerator ApplyDriftEffect()
     {
-        yield return new WaitForSeconds(kart.boostTime);
-        aberration.intensity.value = Mathf.Lerp(0.3f, 0f, 10f);
-        blur.intensity.value = Mathf.Lerp(1f, 0f, 10f);
-        blur.active = false;
-        distortion.intensity.value = Mathf.Lerp(-0.2f, 0f, 10f);
-        canProcess = true;
-        
+        // Gradually adjust post-processing effects to create drift effect
+        yield return StartCoroutine(LerpPostProcessingEffects(
+            DRIFT_ABERRATION_INTENSITY, DRIFT_BLUR_INTENSITY, DRIFT_DISTORTION_INTENSITY));
 
+        // Allow time for drift effect to play
+        yield return new WaitForSeconds(kart.boostTime);
+
+        // Gradually restore post-processing effects to normal values
+        yield return StartCoroutine(LerpPostProcessingEffects(
+            NORMAL_ABERRATION_INTENSITY, NORMAL_BLUR_INTENSITY, NORMAL_DISTORTION_INTENSITY));
+
+        // Enable post-processing effects again
+        canProcess = true;
     }
 
-    void DriftVolumeSettings()
+    private IEnumerator LerpPostProcessingEffects(float targetAberrationIntensity,
+        float targetBlurIntensity, float targetDistortionIntensity)
     {
-        StartCoroutine(NormalVolumeSettings());
-        //aberration.intensity.value = Mathf.Lerp(0f, 3f, 10f);
-        blur.intensity.value = Mathf.Lerp(0f, 1f, 10f);
-        blur.active = true;
-        distortion.intensity.value = Mathf.Lerp(0f, -0.2f, 10f);
+        float elapsed = 0f;
+        float startAberrationIntensity = aberration.intensity.value;
+        float startBlurIntensity = blur.intensity.value;
+        float startDistortionIntensity = distortion.intensity.value;
+
+        while (elapsed < LERP_TIME)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / LERP_TIME;
+
+            aberration.intensity.value = Mathf.Lerp(startAberrationIntensity, targetAberrationIntensity, t);
+            blur.intensity.value = Mathf.Lerp(startBlurIntensity, targetBlurIntensity, t);
+            distortion.intensity.value = Mathf.Lerp(startDistortionIntensity, targetDistortionIntensity, t);
+
+            yield return null;
+        }
     }
 }
