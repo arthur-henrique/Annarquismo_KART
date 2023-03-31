@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CrashMode
   - Minimap
+  - Obstaculos
   layers:
   - Default
   - TransparentFX
