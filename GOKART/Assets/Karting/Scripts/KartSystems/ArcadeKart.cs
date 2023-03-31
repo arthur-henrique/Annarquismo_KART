@@ -662,14 +662,14 @@ namespace KartGame.KartSystems
             boostTime -= Time.deltaTime;
             if (boostTime > 0)
             {
-                m_FinalStats.TopSpeed += 130f;
+                m_FinalStats.TopSpeed += 1230f;
                 currentSpeed = Mathf.Lerp(currentSpeed, m_FinalStats.TopSpeed, 1 * Time.deltaTime);
-                //print(currentSpeed);
+                print(currentSpeed);
             }
             else
             {
                 m_FinalStats.TopSpeed -= 20f;
-                //print(currentSpeed);
+                print(currentSpeed);
             }
                 
         }
