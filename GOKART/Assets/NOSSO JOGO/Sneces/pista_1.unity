@@ -6248,17 +6248,17 @@ PrefabInstance:
     - target: {fileID: 1394235300300637564, guid: a633399d9112c0844a375b470542389c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.118922226
+      value: 0.11892223
       objectReference: {fileID: 0}
     - target: {fileID: 1394235300300637564, guid: a633399d9112c0844a375b470542389c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000017136337
+      value: 0.00000008381904
       objectReference: {fileID: 0}
     - target: {fileID: 1394235300300637564, guid: a633399d9112c0844a375b470542389c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000016880223
+      value: -0.00000001571607
       objectReference: {fileID: 0}
     - target: {fileID: 1394235300300637567, guid: a633399d9112c0844a375b470542389c,
         type: 3}
@@ -6936,6 +6936,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2446654808220187640, guid: 359e9565286309f40a88ea6900fce21a,
     type: 3}
   m_PrefabInstance: {fileID: 1567731011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &896273897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9004099534698621502, guid: 290916092c12903499a6876abec0806c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9004099534339745751}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &912917367 stripped
 Transform:
@@ -8158,6 +8164,12 @@ MonoBehaviour:
   _hasItem: 0
   item: {fileID: 0}
   kart: {fileID: 1083700902}
+--- !u!1 &1102592061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9004099535423447018, guid: 290916092c12903499a6876abec0806c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9004099534339745751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1110508954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15408,6 +15420,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1750847284}
     m_Modifications:
+    - target: {fileID: 9004099534253599171, guid: 290916092c12903499a6876abec0806c,
+        type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004099534253599171, guid: 290916092c12903499a6876abec0806c,
+        type: 3}
+      propertyPath: possibleItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 896273897}
+    - target: {fileID: 9004099534253599171, guid: 290916092c12903499a6876abec0806c,
+        type: 3}
+      propertyPath: possibleItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 1102592061}
+    - target: {fileID: 9004099534253599171, guid: 290916092c12903499a6876abec0806c,
+        type: 3}
+      propertyPath: possibleItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 1102592061}
     - target: {fileID: 9004099534253599172, guid: 290916092c12903499a6876abec0806c,
         type: 3}
       propertyPath: m_RootOrder

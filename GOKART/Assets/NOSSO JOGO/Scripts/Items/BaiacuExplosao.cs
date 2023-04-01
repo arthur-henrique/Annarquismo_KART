@@ -10,6 +10,7 @@ public class BaiacuExplosao : MonoBehaviour
     float tempoDeStun;
     [SerializeField] float maxTempStun;
     bool stunado, stunadoOver;
+    public Animator anim;
    
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
@@ -20,13 +21,7 @@ public class BaiacuExplosao : MonoBehaviour
     {
         if (stunado)
         {
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-            if (!stunadoOver)
-            {
-                stunadoOver = true;
-                StartCoroutine(TimeOver());
-            }
-           
+            rb.constraints = RigidbodyConstraints.FreezeAll;           
         }
     }
 
@@ -42,6 +37,7 @@ public class BaiacuExplosao : MonoBehaviour
             
             var kart = rb.GetComponent<ArcadeKart>();
             //var kart = rb.GetComponent<Rigidbody>();
+            anim.SetTrigger("HIT");
 
 
             if (kart)
@@ -57,6 +53,11 @@ public class BaiacuExplosao : MonoBehaviour
                
             }
         }
+    }
+
+    public void EventToCall()
+    {
+        StartCoroutine(TimeOver());
     }
     IEnumerator TimeOver()
     {
