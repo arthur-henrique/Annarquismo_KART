@@ -6,6 +6,9 @@ public class ItemCollider : MonoBehaviour
 {
     public GameObject[] possibleItems;
     public GameObject randomItem;
+    public Animator anim;
+    public MeshRenderer meshRenderer;
+    public BoxCollider box;
 
    
     private void OnTriggerEnter(Collider other)
@@ -15,16 +18,24 @@ public class ItemCollider : MonoBehaviour
             int randomNumber = Random.Range(0, possibleItems.Length);
             randomItem = possibleItems[randomNumber];
             other.GetComponent<ItemHandler>().HasItem(true, randomItem);
-            StartCoroutine(ReativarCaixa());
-            gameObject.SetActive(false);
+            anim.SetTrigger("GOT");
             
         }
+    }
+
+    public void TurnItOnOff()
+    {
+        StartCoroutine(ReativarCaixa());
+        box.enabled = false;
+        meshRenderer.enabled = false;
     }
 
     IEnumerator ReativarCaixa()
     {
         yield return new WaitForSeconds(2f);
-        gameObject.SetActive(true);
+        anim.Rebind();
+        box.enabled = true;
+        meshRenderer.enabled = true;
 
     }
 }
