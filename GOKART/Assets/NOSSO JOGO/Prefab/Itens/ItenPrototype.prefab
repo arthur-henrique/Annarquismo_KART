@@ -115,7 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItems:
+  - {fileID: 9004099534698621502}
   - {fileID: 9004099535423447018}
+  - {fileID: 9004099534833851796}
   randomItem: {fileID: 0}
   anim: {fileID: 9004099534253599170}
   meshRenderer: {fileID: 9004099534253599174}

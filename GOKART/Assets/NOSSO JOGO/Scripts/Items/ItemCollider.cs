@@ -9,12 +9,22 @@ public class ItemCollider : MonoBehaviour
     public Animator anim;
     public MeshRenderer meshRenderer;
     public BoxCollider box;
+    public Transform baiacuSpawn;
+    public GameObject crab, imagemItem;
+    private Rigidbody rb;
+    
+  
 
    
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        rb = other.attachedRigidbody;
+        
+        if (other.CompareTag("Player"))
         {
+            imagemItem.SetActive(true);
+            baiacuSpawn = rb.transform.GetChild(7);
+            crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
             int randomNumber = Random.Range(0, possibleItems.Length);
             randomItem = possibleItems[randomNumber];
             other.GetComponent<ItemHandler>().HasItem(true, randomItem);

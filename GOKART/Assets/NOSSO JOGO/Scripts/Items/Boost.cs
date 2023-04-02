@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class Boost : MonoBehaviour, IUsable
 {
+    public ItemCollider item;
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
         MaxTime = 5
@@ -13,16 +14,15 @@ public class Boost : MonoBehaviour, IUsable
     public float boostDuration, amountToBoost;
     public UnityEvent onPowerupActivated;
     public UnityEvent onPowerupFinishCooldown;
+  
 
     public void Use(ArcadeKart kart)
     {
-        //kart.boostPower = amountToBoost;
-        //kart.boostTime = boostDuration;
-        //kart.m_FinalStats.Acceleration = amountToBoost;
-        //StartCoroutine(PowerCountDown(kart));
+    
         AtivarBoost(kart);
         print("HasUsedItem");
         print(kart.currentSpeed);
+        item.imagemItem.SetActive(false);
     }
 
 

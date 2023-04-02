@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Carangueijo : MonoBehaviour, IUsable
 {
-    public Transform firePoint;
-    public GameObject crab;
+    public ItemCollider item;
 
     public void Use(ArcadeKart kart)
     {
         SpawnarCrab();
+        item.imagemItem.SetActive(false);
     }
     void SpawnarCrab()
     {
-        crab.SetActive(true);
+        item.crab.SetActive(true);
     }
 }

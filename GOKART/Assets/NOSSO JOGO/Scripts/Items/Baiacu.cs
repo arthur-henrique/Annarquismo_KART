@@ -5,19 +5,23 @@ using UnityEngine;
 
 public class Baiacu : MonoBehaviour, IUsable
 {
-    public Transform firePoint;
+
     public GameObject baiacu;
+    public ItemCollider item;
 
 
-    public void Use(ArcadeKart kart)
+    public void Use(ArcadeKart kart )
     {
         ColocarBaiacu();
+        item.imagemItem.SetActive(false);
         
     }
 
     void ColocarBaiacu()
     {
-        Instantiate(baiacu, firePoint.position, firePoint.rotation);
+       
+        Instantiate(baiacu, item.baiacuSpawn.position, item.baiacuSpawn.rotation);
     }
+   
 
 }
