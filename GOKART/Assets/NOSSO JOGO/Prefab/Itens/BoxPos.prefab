@@ -99,6 +99,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemBox
       objectReference: {fileID: 0}
+    - target: {fileID: 9004099534698621500, guid: 290916092c12903499a6876abec0806c,
+        type: 3}
+      propertyPath: baiacu
+      value: 
+      objectReference: {fileID: 1880312537370223312, guid: 4ca1142aead98714d886b2b97fa82f63,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290916092c12903499a6876abec0806c, type: 3}
 --- !u!4 &5957619100508819731 stripped
