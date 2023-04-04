@@ -7,7 +7,7 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] characterList;
     public int index;
-    public string novaCena;
+   
     
    
     
@@ -59,7 +59,7 @@ public class CharacterSelection : MonoBehaviour
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelect", index);
-        SceneManager.LoadScene(novaCena);
+        SceneManager.LoadScene(MenuController.instance.faseParaCarregar);
     }
     public void Botao0()
     {
