@@ -5,10 +5,22 @@ using KartGame.KartSystems;
 
 public class ItemHandler : MonoBehaviour
 {
+    public static ItemHandler InstanceItemHandler;
     public bool _hasItem;
     public GameObject item;
+    public bool[] isFull;
+    public GameObject[] slots;
     public ArcadeKart kart;
-    
+    public ItemCollider itemCollider;
+
+
+    private void Awake()
+    {
+        InstanceItemHandler = this;
+    }
+
+
+
 
 
 
@@ -34,8 +46,7 @@ public class ItemHandler : MonoBehaviour
                 
             }
         }
-        else
-            print(kart.m_FinalStats.TopSpeed);
+       
                     
 
     }

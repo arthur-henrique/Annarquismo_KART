@@ -10,10 +10,13 @@ public class Carangueijo : MonoBehaviour, IUsable
     public void Use(ArcadeKart kart)
     {
         SpawnarCrab();
-        item.imagemItem.SetActive(false);
+       
     }
     void SpawnarCrab()
     {
         item.crab.SetActive(true);
+        GameObject sprtiteItem = ItemHandler.InstanceItemHandler.slots[item.i].transform.GetChild(item.randomNumber).gameObject;
+        sprtiteItem.SetActive(false);
+        ItemHandler.InstanceItemHandler.isFull[item.i] = false;
     }
 }

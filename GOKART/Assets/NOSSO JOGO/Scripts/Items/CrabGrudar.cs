@@ -8,6 +8,7 @@ public class CrabGrudar : MonoBehaviour
 {
     public float slowDuration;
     private Rigidbody rb;
+    
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
         MaxTime = 5
@@ -48,6 +49,7 @@ public class CrabGrudar : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         gameObject.SetActive(false);
+       
     }
 
 
