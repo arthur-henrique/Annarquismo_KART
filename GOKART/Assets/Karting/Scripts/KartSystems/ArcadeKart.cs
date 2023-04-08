@@ -391,6 +391,7 @@ namespace KartGame.KartSystems
             // while in the air, fall faster
             if (AirPercent >= 1)
             {
+                print(AirPercent);
                 Rigidbody.velocity += Physics.gravity * Time.fixedDeltaTime * m_FinalStats.AddedGravity;
             }
         }
