@@ -63,7 +63,7 @@ public class BaiacuExplosao : MonoBehaviour
     {
         yield return new WaitForSeconds(maxTempStun);
         rb.constraints = RigidbodyConstraints.None;
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
         
     }
    
