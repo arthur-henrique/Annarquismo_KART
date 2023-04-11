@@ -838,14 +838,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2524720211097483750}
-  m_LocalRotation: {x: -0, y: -0.000000039115548, z: 9.313226e-10, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.8400005, z: -4.5599976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5796397664203180767}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &3484281105520057427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1236,7 @@ GameObject:
   - component: {fileID: 5796397664203180738}
   - component: {fileID: 5796397664203180764}
   m_Layer: 2
-  m_Name: 'Mateus_Prefab  '
+  m_Name: Mateus_Prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,6 @@ MonoBehaviour:
   boostPower: 1230
   posToSpawn: {x: 0, y: 0, z: 0}
   rotationToSpawn: {x: 0, y: 0, z: 0, w: 0}
-  NozzleVFXTwo: {fileID: 0}
 --- !u!114 &5796397664203180761
 MonoBehaviour:
   m_ObjectHideFlags: 0

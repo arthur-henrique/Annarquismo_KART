@@ -683,7 +683,11 @@ namespace KartGame.KartSystems
             }
                 
         }
-
+        public void SetSpawn(Vector3 pos, Quaternion rotation)
+        {
+            posToSpawn = pos;
+            rotationToSpawn = rotation;
+        }
         public void ReSpawn()
         {
             transform.position = posToSpawn;

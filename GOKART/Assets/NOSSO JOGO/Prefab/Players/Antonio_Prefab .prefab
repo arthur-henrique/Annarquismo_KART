@@ -343,7 +343,6 @@ MonoBehaviour:
   boostPower: 1230
   posToSpawn: {x: 0, y: 0, z: 0}
   rotationToSpawn: {x: 0, y: 0, z: 0, w: 0}
-  NozzleVFXTwo: {fileID: 0}
 --- !u!114 &956762818246319744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,8 +552,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394235300300637567}
-  m_LocalRotation: {x: 0.13659628, y: 0.0000000088419005, z: -0.0000000012191984,
-    w: 0.9906268}
+  m_LocalRotation: {x: 0.13659628, y: 0.000000008522551, z: -0.0000000011751636, w: 0.9906268}
   m_LocalPosition: {x: 0, y: 3.1684358, z: -4.5777087}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4795,14 +4793,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9106829141339008078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.84, z: -4.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 956762818246319750}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &2371216709529539871
 PrefabInstance:
   m_ObjectHideFlags: 0
