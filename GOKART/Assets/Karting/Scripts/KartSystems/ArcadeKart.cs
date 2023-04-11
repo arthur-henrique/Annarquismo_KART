@@ -188,6 +188,8 @@ namespace KartGame.KartSystems
         // Extra Things I Added
         public float currentSpeed, boostTime, driftTime, jumpForce;
         public float boostPower = 1230f;
+        public Vector3 posToSpawn;
+        public Quaternion rotationToSpawn;
 
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
@@ -270,6 +272,12 @@ namespace KartGame.KartSystems
                     Instantiate(NozzleVFX, nozzle, false);
                 }
             }
+        }
+
+        private void Start()
+        {
+            posToSpawn = gameObject.transform.position;
+            rotationToSpawn = gameObject.transform.rotation;
         }
 
         void AddTrailToWheel(WheelCollider wheel)
@@ -674,6 +682,12 @@ namespace KartGame.KartSystems
                 //print(currentSpeed);
             }
                 
+        }
+
+        public void ReSpawn()
+        {
+            transform.position = posToSpawn;
+            transform.rotation = rotationToSpawn;
         }
 
         //void Jump()
