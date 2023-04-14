@@ -25,5 +25,9 @@ public class Tubarao : MonoBehaviour, IUsable
         tubaCam.Priority = 0;
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
 }
