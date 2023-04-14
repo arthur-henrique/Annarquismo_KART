@@ -35,7 +35,7 @@ public class ItemCollider : MonoBehaviour
                  {
 
 
-                baiacuSpawn = rb.transform.GetChild(7);
+                baiacuSpawn = rb.transform.GetChild(6);
                 crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
                 randomNumber = Random.Range(0, possibleItems.Length);
                 randomItem = possibleItems[randomNumber];

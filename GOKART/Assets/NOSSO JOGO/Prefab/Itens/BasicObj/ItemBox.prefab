@@ -100,7 +100,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9004099534253599171
 MonoBehaviour:
@@ -118,10 +118,15 @@ MonoBehaviour:
   - {fileID: 9004099534698621502}
   - {fileID: 9004099535423447018}
   - {fileID: 9004099534833851796}
+  spritesItem: []
   randomItem: {fileID: 0}
   anim: {fileID: 9004099534253599170}
   meshRenderer: {fileID: 9004099534253599174}
   box: {fileID: 9004099534253599175}
+  baiacuSpawn: {fileID: 0}
+  randomNumber: 0
+  crab: {fileID: 0}
+  i: 0
 --- !u!95 &9004099534253599170
 Animator:
   serializedVersion: 5
@@ -186,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835e83b6d00f00047b6679d64bc873f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
   baiacu: {fileID: 3594722186945317909, guid: a193a7f4dd1bba8448e7a7f3005c9cad, type: 3}
+  item: {fileID: 0}
 --- !u!1 &9004099534833851796
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,8 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51a32ddf6637ed43a3c57ab72f11914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  crab: {fileID: 0}
+  item: {fileID: 0}
 --- !u!1 &9004099535423447018
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8050ade6531054544972ce8f9f09d005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   boostStats:
     modifiers:
       TopSpeed: 70

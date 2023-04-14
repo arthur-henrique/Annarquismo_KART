@@ -23,7 +23,6 @@ public class ItemHandler : MonoBehaviour
 
 
 
-
     public void HasItem(bool hasItem, GameObject itemToGet)
     {
         _hasItem = hasItem;
