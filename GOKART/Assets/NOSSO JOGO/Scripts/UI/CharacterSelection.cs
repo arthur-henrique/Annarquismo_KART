@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] characterList;
+   
     public int index;
+    public Camera cam1, cam2;
    
     
    
@@ -18,13 +20,28 @@ public class CharacterSelection : MonoBehaviour
         
 
         characterList = new GameObject[transform.childCount];
-       
-       
-        //Coloca os obj no array
-        for (int i = 0; i < transform.childCount; i++)
+        if (ModeControl.singlePlayer)
         {
-            characterList[i] = transform.GetChild(i).gameObject;
+            cam1.rect = new Rect(0, 0, 1, 1);
+            Destroy(GameObject.Find("List2"));
+            
         }
+        else
+        {
+            
+            cam1.rect = new Rect(0, 0.5f, 1, 0.5f);
+            cam2.rect = new Rect(0, 0, 1, 0.5f);
+        }
+
+       
+        
+            //Coloca os obj no array
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                characterList[i] = transform.GetChild(i).gameObject;
+            }
+        
+        
         //deixa desligado os modelos
         foreach(GameObject go in characterList)
         {
@@ -35,6 +52,7 @@ public class CharacterSelection : MonoBehaviour
         {
             characterList[index].SetActive(true);
         }
+
     }
     public void ToggleLeft()
     {
