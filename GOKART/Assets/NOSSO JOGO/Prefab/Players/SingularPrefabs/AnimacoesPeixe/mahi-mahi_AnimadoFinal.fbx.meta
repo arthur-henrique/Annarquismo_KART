@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9048872e9437dd8419b3ccc7232fd951
+guid: 371a2993323a7fc46baf52d8c74d5b8a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,40 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Nadando (1)
-      takeName: Armature|Nadando
-      internalID: 5097476576524384348
-      firstFrame: 0
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Idle
-      takeName: Armature|Idle
+      name: Armature|Nocauteado (1)
+      takeName: Armature|Nocauteado
       internalID: -8945691123924629249
       firstFrame: 0
-      lastFrame: 100
+      lastFrame: 72
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -91,11 +62,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Nadando
-      takeName: Armature|Nadando
-      internalID: -8040568488084626558
+      name: Armature|Nocauteado
+      takeName: Armature|Nocauteado
+      internalID: 4218557418824200885
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 72
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
