@@ -28,29 +28,24 @@ public class BaiacuExplosao : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-         
-         rb = other.attachedRigidbody;
-        
-        if (rb)
+        if(!other.CompareTag("Shark"))
         {
-            
-            var kart = rb.GetComponent<ArcadeKart>();
-            //var kart = rb.GetComponent<Rigidbody>();
-            anim.SetTrigger("HIT");
+            rb = other.attachedRigidbody;
 
-
-            if (kart)
+            if (rb)
             {
-                //rb.constraints = RigidbodyConstraints.FreezeAll;
-                //transform.Rotate(new Vector3(0f, 0f, 1f));
-                //kart.AddPowerup(this.boostStats);
-                //onPowerupActivated.Invoke();
-                stunado = true;
-                
-               
+                var kart = rb.GetComponent<ArcadeKart>();
+                //var kart = rb.GetComponent<Rigidbody>();
+                anim.SetTrigger("HIT");
 
-               
+                if (kart)
+                {
+                    //rb.constraints = RigidbodyConstraints.FreezeAll;
+                    //transform.Rotate(new Vector3(0f, 0f, 1f));
+                    //kart.AddPowerup(this.boostStats);
+                    //onPowerupActivated.Invoke();
+                    stunado = true;
+                }
             }
         }
     }
