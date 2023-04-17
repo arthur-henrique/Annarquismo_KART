@@ -29,9 +29,8 @@ public class CrabGrudar : MonoBehaviour
             //var kart = rb.GetComponent<Rigidbody>();
 
 
-            if (kart)
+            if (kart && kart.canBeEffected)
             {
-                
                 kart.AddPowerup(this.boostStats);
                 onPowerupActivated.Invoke();
                 boostStats.MaxTime = boostStats.MaxTime + slowDuration;

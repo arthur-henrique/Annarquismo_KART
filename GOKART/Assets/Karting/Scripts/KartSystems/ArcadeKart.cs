@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.VFX;
+using System.Diagnostics.Eventing.Reader;
 
 namespace KartGame.KartSystems
 {
@@ -190,6 +191,7 @@ namespace KartGame.KartSystems
         public float boostPower = 1230f;
         public Vector3 posToSpawn;
         public Quaternion rotationToSpawn;
+        public bool canBeEffected = true;
 
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;

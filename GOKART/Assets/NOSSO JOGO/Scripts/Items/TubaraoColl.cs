@@ -24,13 +24,17 @@ public class TubaraoColl : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             var kart = rb.GetComponent<ArcadeKart>();
-            if (kart && kart != userKart)
+            if(kart.canBeEffected)
             {
-                print("ISlowedDown");
-                kart.AddPowerup(this.boostStats);
-                onPowerupActivated.Invoke();
-                boostStats.MaxTime += slowDuration;
+                if (kart && kart != userKart)
+                {
+                    print("ISlowedDown");
+                    kart.AddPowerup(this.boostStats);
+                    onPowerupActivated.Invoke();
+                    boostStats.MaxTime += slowDuration;
+                }
             }
+            
         }
         
         else if (other.CompareTag("Obstaculos"))

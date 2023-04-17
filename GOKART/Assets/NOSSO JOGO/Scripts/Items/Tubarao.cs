@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Events;
-using static UnityEditor.Progress;
 
 public class Tubarao : MonoBehaviour, IUsable
 {

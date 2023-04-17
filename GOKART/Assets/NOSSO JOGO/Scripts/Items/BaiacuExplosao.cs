@@ -38,7 +38,7 @@ public class BaiacuExplosao : MonoBehaviour
                 //var kart = rb.GetComponent<Rigidbody>();
                 anim.SetTrigger("HIT");
 
-                if (kart)
+                if (kart && kart.canBeEffected)
                 {
                     //rb.constraints = RigidbodyConstraints.FreezeAll;
                     //transform.Rotate(new Vector3(0f, 0f, 1f));
