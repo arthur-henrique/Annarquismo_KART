@@ -125,10 +125,10 @@ namespace KartGame.KartSystems
         [Range(0.0f, 90.0f), Tooltip("Angle to rotate the VFX.")]
         public float DriftSparkRotation = 17.0f;
         [Tooltip("VFX that will be placed on the wheels when drifting.")]
-        public GameObject DriftTrailPrefab;
-        [Range(-0.1f, 0.1f), Tooltip("Vertical to move the trails up or down and ensure they are above the ground.")]
-        public float DriftTrailVerticalOffset;
-        [Tooltip("VFX that will spawn upon landing, after a jump.")]
+        //public GameObject DriftTrailPrefab;
+        //[Range(-0.1f, 0.1f), Tooltip("Vertical to move the trails up or down and ensure they are above the ground.")]
+        //public float DriftTrailVerticalOffset;
+        //[Tooltip("VFX that will spawn upon landing, after a jump.")]
         public GameObject JumpVFX;
         [Tooltip("VFX that is spawn on the nozzles of the kart.")]
         public GameObject NozzleVFX;
@@ -222,13 +222,17 @@ namespace KartGame.KartSystems
         {
             foreach (var vfx in m_DriftSparkInstances)
             {
-                vfx.sparks.transform.position = vfx.wheel.transform.position - (vfx.wheel.radius * Vector3.up) + (DriftTrailVerticalOffset * Vector3.up) + (transform.right * vfx.horizontalOffset);
+                //vfx.sparks.transform.position = vfx.wheel.transform.position - (vfx.wheel.radius * Vector3.up) + (DriftTrailVerticalOffset * Vector3.up) + (transform.right * vfx.horizontalOffset);
+                vfx.sparks.transform.position = vfx.wheel.transform.position - (vfx.wheel.radius * Vector3.up) + (transform.right * vfx.horizontalOffset);
+
                 vfx.sparks.transform.rotation = transform.rotation * Quaternion.Euler(0.0f, 0.0f, vfx.rotation);
             }
 
             foreach (var trail in m_DriftTrailInstances)
             {
-                trail.trailRoot.transform.position = trail.wheel.transform.position - (trail.wheel.radius * Vector3.up) + (DriftTrailVerticalOffset * Vector3.up);
+                //trail.trailRoot.transform.position = trail.wheel.transform.position - (trail.wheel.radius * Vector3.up) + (DriftTrailVerticalOffset * Vector3.up);
+                trail.trailRoot.transform.position = trail.wheel.transform.position - (trail.wheel.radius * Vector3.up);
+
                 trail.trailRoot.transform.rotation = transform.rotation;
             }
         }
@@ -261,11 +265,11 @@ namespace KartGame.KartSystems
                 AddSparkToWheel(RearRightWheel, DriftSparkHorizontalOffset, DriftSparkRotation);
             }
 
-            if (DriftTrailPrefab != null)
-            {
-                AddTrailToWheel(RearLeftWheel);
-                AddTrailToWheel(RearRightWheel);
-            }
+            //if (DriftTrailPrefab != null)
+            //{
+            //    AddTrailToWheel(RearLeftWheel);
+            //    AddTrailToWheel(RearRightWheel);
+            //}
 
             if (NozzleVFX != null)
             {
@@ -284,10 +288,10 @@ namespace KartGame.KartSystems
 
         void AddTrailToWheel(WheelCollider wheel)
         {
-            GameObject trailRoot = Instantiate(DriftTrailPrefab, gameObject.transform, false);
-            TrailRenderer trail = trailRoot.GetComponentInChildren<TrailRenderer>();
-            trail.emitting = false;
-            m_DriftTrailInstances.Add((trailRoot, wheel, trail));
+            //GameObject trailRoot = Instantiate(DriftTrailPrefab, gameObject.transform, false);
+            //TrailRenderer trail = trailRoot.GetComponentInChildren<TrailRenderer>();
+            //trail.emitting = false;
+            //m_DriftTrailInstances.Add((trailRoot, wheel, trail));
         }
 
         void AddSparkToWheel(WheelCollider wheel, float horizontalOffset, float rotation)
@@ -364,7 +368,7 @@ namespace KartGame.KartSystems
             {
                 Input = m_Inputs[i].GenerateInput();
                 WantsToDrift = Input.Brake && Vector3.Dot(Rigidbody.velocity, transform.forward) > 0.0f;
-                WantsToJump = Input.Jump && !m_InAir && currentSpeed >= 6f;
+                //WantsToJump = Input.Jump && !m_InAir && currentSpeed >= 6f;
 
             }
         }
@@ -549,13 +553,13 @@ namespace KartGame.KartSystems
                 }
                 // Jump Management
 
-                if(WantsToJump)
-                {
-                    WantsToJump= false;
-                    Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y + jumpForce, Rigidbody.velocity.z);
+                //if(WantsToJump)
+                //{
+                //    WantsToJump= false;
+                //    Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y + jumpForce, Rigidbody.velocity.z);
                     
-                    print("Jump");
-                }
+                //    print("Jump");
+                //}
                 // Drift Management
                 if (!IsDrifting)
                 {
