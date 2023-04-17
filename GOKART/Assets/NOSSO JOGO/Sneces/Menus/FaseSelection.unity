@@ -1297,4 +1297,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f59128c077a6e04286348436f043f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fase: Fase_1
+  fase: pista_1
