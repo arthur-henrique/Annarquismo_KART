@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ItemCollider : MonoBehaviour
 {
     public GameObject[] possibleItems;
-    public Image[] spritesItem;
     public GameObject randomItem;
     public Animator anim;
     public MeshRenderer meshRenderer;
@@ -15,7 +14,9 @@ public class ItemCollider : MonoBehaviour
     public int randomNumber;
     public GameObject crab;
     private Rigidbody rb;
+    ItemHandler itemHandler;
     public int i;
+    
 
    
     
@@ -28,28 +29,30 @@ public class ItemCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         rb = other.attachedRigidbody;
-      
+         itemHandler = rb.transform.GetChild(1).gameObject.GetComponent<ItemHandler>();
+        
             if (other.CompareTag("Player"))
             {
-                 if (ItemHandler.InstanceItemHandler.isFull[i] == false)
+                 
+
                  {
+                    baiacuSpawn = rb.transform.GetChild(6);
+                    crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
+                    randomNumber = Random.Range(0, possibleItems.Length);
+                    randomItem = possibleItems[randomNumber];
+                    other.GetComponent<ItemHandler>().HasItem(true, randomItem);
 
 
-                baiacuSpawn = rb.transform.GetChild(6);
-                crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
-                randomNumber = Random.Range(0, possibleItems.Length);
-                randomItem = possibleItems[randomNumber];
-                other.GetComponent<ItemHandler>().HasItem(true, randomItem);
                
                 if (randomItem != null)
                 {
-                    for (i = 0; i < ItemHandler.InstanceItemHandler.slots.Length; i++)
+                    for (i = 0; i < itemHandler.slots.Length; i++)
                     {
-                        if (ItemHandler.InstanceItemHandler.isFull[i] == false)
+                        if (itemHandler.isFull[i] == false)
                         {
 
-                            ItemHandler.InstanceItemHandler.isFull[i] = true;
-                            GameObject sprtiteItem = ItemHandler.InstanceItemHandler.slots[i].transform.GetChild(randomNumber).gameObject;
+                            itemHandler.isFull[i] = true;
+                            GameObject sprtiteItem = itemHandler.slots[i].transform.GetChild(randomNumber).gameObject;
                             sprtiteItem.SetActive(true);
                             break;
                         }
