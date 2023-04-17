@@ -15,8 +15,8 @@ public class Carangueijo : MonoBehaviour, IUsable
     void SpawnarCrab()
     {
         item.crab.SetActive(true);
-        GameObject sprtiteItem = ItemHandler.InstanceItemHandler.slots[item.i].transform.GetChild(item.randomNumber).gameObject;
+        GameObject sprtiteItem = item.itemHandler.slots[item.i].transform.GetChild(item.randomNumber).gameObject;
         sprtiteItem.SetActive(false);
-        ItemHandler.InstanceItemHandler.isFull[item.i] = false;
+        item.itemHandler.isFull[item.i] = false;
     }
 }

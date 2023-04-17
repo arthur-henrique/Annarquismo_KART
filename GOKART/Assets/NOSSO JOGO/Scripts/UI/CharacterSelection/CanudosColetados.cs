@@ -6,11 +6,13 @@ using UnityEngine;
 public class CanudosColetados : MonoBehaviour
 {
     public TMP_Text canudoTexto;
+    public int canudosPegos;
    
     
     void Start()
     {
-        canudoTexto.text = "Canudos =  " + ContadorDeCanudo.instance.currentCanudos.ToString();
+        canudosPegos = ContadorDeCanudo.instance.currentCanudos;
+        canudoTexto.text = "Canudos =  " + canudosPegos.ToString();
     }
 
    

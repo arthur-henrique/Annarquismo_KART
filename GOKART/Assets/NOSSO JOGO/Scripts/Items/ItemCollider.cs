@@ -14,28 +14,31 @@ public class ItemCollider : MonoBehaviour
     public int randomNumber;
     public GameObject crab;
     private Rigidbody rb;
-    ItemHandler itemHandler;
     public int i;
-    
-
-   
-    
-    
+    public ItemHandler itemHandler;
 
 
 
-  
+
+
+
+
+
+
+
+
 
     private void OnTriggerEnter(Collider other)
     {
         rb = other.attachedRigidbody;
-         itemHandler = rb.transform.GetChild(1).gameObject.GetComponent<ItemHandler>();
+        itemHandler = other.GetComponent<ItemHandler>();
+        
         
             if (other.CompareTag("Player"))
             {
                  
 
-                 {
+                 
                     baiacuSpawn = rb.transform.GetChild(6);
                     crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
                     randomNumber = Random.Range(0, possibleItems.Length);
@@ -68,7 +71,7 @@ public class ItemCollider : MonoBehaviour
 
                    
                 
-            }
+            
 
             
 
