@@ -14,7 +14,7 @@ public class MudarPosPlayer : MonoBehaviour
         if (!ModeControl.singlePlayer)
         {
            
-            gameObject.transform.position = new Vector3(-5.81f, -1.17f, -1.46f);
+            gameObject.transform.position = new Vector3(-6.01f, 0.56f, -1.46f);
 
         }
     }

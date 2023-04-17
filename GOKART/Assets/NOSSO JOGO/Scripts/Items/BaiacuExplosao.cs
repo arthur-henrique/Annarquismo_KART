@@ -54,6 +54,12 @@ public class BaiacuExplosao : MonoBehaviour
     {
         StartCoroutine(TimeOver());
     }
+
+    public void SafestPinch()
+    {
+        rb.constraints = RigidbodyConstraints.None;
+        Destroy(transform.parent.gameObject);
+    }
     IEnumerator TimeOver()
     {
         yield return new WaitForSeconds(maxTempStun);

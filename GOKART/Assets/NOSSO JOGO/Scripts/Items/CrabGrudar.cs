@@ -40,6 +40,8 @@ public class CrabGrudar : MonoBehaviour
         }
         else if (other.CompareTag("Obstaculos"))
         {
+            if(other.GetComponent<BaiacuExplosao>() != null)
+                other.GetComponent<BaiacuExplosao>().SafestPinch();
             Destroy(other.gameObject);
             gameObject.SetActive(false);
         }
