@@ -270,7 +270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1817041059642205058}
   - component: {fileID: 7706267628299298102}
-  - component: {fileID: 3648950129964286186}
   - component: {fileID: 1181696290731940652}
   - component: {fileID: 6238423473178590064}
   m_Layer: 0
@@ -287,8 +286,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086043923696457274}
-  m_LocalRotation: {x: 0.13300917, y: 0.22555442, z: -0.031101579, w: 0.96460694}
-  m_LocalPosition: {x: 484.85968, y: 6.5200005, z: -8.337891}
+  m_LocalRotation: {x: 0.13300899, y: 0.22555386, z: -0.03110146, w: 0.96460706}
+  m_LocalPosition: {x: 484.8597, y: 6.5200005, z: -8.337945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,14 +337,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3648950129964286186
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086043923696457274}
-  m_Enabled: 1
 --- !u!114 &1181696290731940652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,6 +1504,7 @@ MonoBehaviour:
   boostPower: 1230
   posToSpawn: {x: 0, y: 0, z: 0}
   rotationToSpawn: {x: 0, y: 0, z: 0, w: 0}
+  canBeEffected: 1
 --- !u!114 &999271078444758229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7680,8 +7672,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8655273259433270906}
-  m_LocalRotation: {x: 0.13659701, y: 0.0000005215406, z: -0.00000006705522, w: 0.9906267}
-  m_LocalPosition: {x: -0.0000500679, y: 6.52, z: -9.419965}
+  m_LocalRotation: {x: 0.13659683, y: -0.000000059604645, z: 0.000000007450581, w: 0.9906268}
+  m_LocalPosition: {x: 0.0000011920929, y: 6.52, z: -9.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
