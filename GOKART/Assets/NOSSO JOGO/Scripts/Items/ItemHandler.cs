@@ -12,6 +12,7 @@ public class ItemHandler : MonoBehaviour
     public GameObject[] slots;
     public ArcadeKart kart;
     public ItemCollider itemCollider;
+    public bool isPlayer1, isPlayer2;
 
 
     private void Awake()
@@ -30,8 +31,9 @@ public class ItemHandler : MonoBehaviour
     }
 
     private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+    {  
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && isPlayer1)
         {
             if(_hasItem && item != null)
             {
@@ -43,6 +45,20 @@ public class ItemHandler : MonoBehaviour
 
                 }
                 
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.RightShift) && isPlayer2)
+        {
+            if (_hasItem && item != null)
+            {
+                _hasItem = false;
+                if (item.TryGetComponent(out IUsable usableItem))
+                {
+                    usableItem.Use(kart);
+
+
+                }
+
             }
         }
        

@@ -75,7 +75,7 @@ public class ItemCollider : MonoBehaviour
 
             
 
-        }
+            }
     }
 
     public void TurnItOnOff()
