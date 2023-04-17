@@ -368,7 +368,7 @@ namespace KartGame.KartSystems
             {
                 Input = m_Inputs[i].GenerateInput();
                 WantsToDrift = Input.Brake && Vector3.Dot(Rigidbody.velocity, transform.forward) > 0.0f;
-                WantsToJump = Input.Jump && !m_InAir && currentSpeed >= 6f;
+                //WantsToJump = Input.Jump && !m_InAir && currentSpeed >= 6f;
 
             }
         }
@@ -553,13 +553,13 @@ namespace KartGame.KartSystems
                 }
                 // Jump Management
 
-                if(WantsToJump)
-                {
-                    WantsToJump= false;
-                    Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y + jumpForce, Rigidbody.velocity.z);
+                //if(WantsToJump)
+                //{
+                //    WantsToJump= false;
+                //    Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y + jumpForce, Rigidbody.velocity.z);
                     
-                    print("Jump");
-                }
+                //    print("Jump");
+                //}
                 // Drift Management
                 if (!IsDrifting)
                 {
