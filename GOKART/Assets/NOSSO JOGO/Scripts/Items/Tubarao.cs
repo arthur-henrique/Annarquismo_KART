@@ -8,8 +8,9 @@ using UnityEngine.Events;
 public class Tubarao : MonoBehaviour, IUsable
 {
     public GameObject[] tubaObj;
-    public CinemachineVirtualCamera defaultCam, tubaCam;
+    //public CinemachineVirtualCamera defaultCam, tubaCam;
     public ArcadeKart userKart;
+    public ItemCollider itemCollider;
 
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
@@ -25,13 +26,10 @@ public class Tubarao : MonoBehaviour, IUsable
 
     public void Use(ArcadeKart kart)
     {
-        for (int i = 0; i < tubaObj.Length; i++)
-        {
-            tubaObj[i].SetActive(true);
-        }
+        itemCollider.tuba.SetActive(true);
         AtivarBoost(kart);
-        defaultCam.Priority = 0;
-        tubaCam.Priority = 10;
+        itemCollider.defaultCam.Priority = 0;
+        itemCollider.tubaCam.Priority = 10;
         userKart = kart;
         StartCoroutine(Destubarar());
     }
@@ -39,12 +37,9 @@ public class Tubarao : MonoBehaviour, IUsable
     IEnumerator Destubarar()
     {
         yield return new WaitForSecondsRealtime(5f);
-        for (int i = 0; i < tubaObj.Length; i++)
-        {
-            tubaObj[i].SetActive(false);
-        }
-        defaultCam.Priority = 10;
-        tubaCam.Priority = 0;
+        itemCollider.tuba.SetActive(false);
+        itemCollider.defaultCam.Priority = 10;
+        itemCollider.tubaCam.Priority = 0;
     }
 
     void AtivarBoost(ArcadeKart kart)

@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class ItemCollider : MonoBehaviour
     public GameObject[] possibleItems;
     public GameObject randomItem;
     public Animator anim;
+    public CinemachineVirtualCamera defaultCam, tubaCam;
     public MeshRenderer meshRenderer;
     public BoxCollider box;
     public Transform baiacuSpawn;
@@ -16,6 +18,7 @@ public class ItemCollider : MonoBehaviour
     private Rigidbody rb;
     public int i;
     public ItemHandler itemHandler;
+    public GameObject tuba;
 
 
 
@@ -36,9 +39,12 @@ public class ItemCollider : MonoBehaviour
         
             if (other.CompareTag("Player"))
             {
-                 
 
-                 
+
+                    defaultCam = rb.transform.GetChild(4).GetComponent<CinemachineVirtualCamera>();
+                    tubaCam = rb.transform.GetChild(8).GetComponent<CinemachineVirtualCamera>();
+                    tuba = rb.transform.GetChild(7).gameObject;
+
                     baiacuSpawn = rb.transform.GetChild(6);
                     crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
                     randomNumber = Random.Range(0, possibleItems.Length);

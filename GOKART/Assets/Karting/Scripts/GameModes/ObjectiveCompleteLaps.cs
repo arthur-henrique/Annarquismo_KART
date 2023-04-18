@@ -22,7 +22,7 @@ public class ObjectiveCompleteLaps : Objective
         
         // set a title and description specific for this type of objective, if it hasn't one
         if (string.IsNullOrEmpty(title))
-            title = $"Complete {lapsToComplete} {targetName}s";
+            title = $"";
         
     }
 
