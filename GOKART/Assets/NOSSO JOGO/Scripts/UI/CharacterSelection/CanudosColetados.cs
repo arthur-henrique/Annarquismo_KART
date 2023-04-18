@@ -7,11 +7,12 @@ public class CanudosColetados : MonoBehaviour
 {
     public TMP_Text canudoTexto;
     public int canudosPegos;
+    public ContadorDeCanudo contador;
    
     
     void Start()
     {
-        canudosPegos = ContadorDeCanudo.instance.currentCanudos;
+        canudosPegos = contador.currentCanudos;
         canudoTexto.text = "Canudos =  " + canudosPegos.ToString();
     }
 

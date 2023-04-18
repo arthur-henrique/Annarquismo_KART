@@ -394,6 +394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList: []
   index: 0
+  cam1: {fileID: 0}
+  cam2: {fileID: 0}
 --- !u!1 &134625305
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,8 +456,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play Again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
-  m_sharedMaterial: {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2,
+  m_fontAsset: {fileID: 11400000, guid: 1a1ffb4f0f210cd4b92824a28253d733, type: 2}
+  m_sharedMaterial: {fileID: -8020428640752680662, guid: 1a1ffb4f0f210cd4b92824a28253d733,
     type: 2}
   m_fontSharedMaterials:
   - {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
@@ -591,8 +593,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
-  m_sharedMaterial: {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2,
+  m_fontAsset: {fileID: 11400000, guid: 1a1ffb4f0f210cd4b92824a28253d733, type: 2}
+  m_sharedMaterial: {fileID: -8020428640752680662, guid: 1a1ffb4f0f210cd4b92824a28253d733,
     type: 2}
   m_fontSharedMaterials:
   - {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
@@ -1219,8 +1221,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You WIN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
-  m_sharedMaterial: {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2,
+  m_fontAsset: {fileID: 11400000, guid: 1a1ffb4f0f210cd4b92824a28253d733, type: 2}
+  m_sharedMaterial: {fileID: -8020428640752680662, guid: 1a1ffb4f0f210cd4b92824a28253d733,
     type: 2}
   m_fontSharedMaterials:
   - {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
