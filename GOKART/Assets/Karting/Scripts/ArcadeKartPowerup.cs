@@ -1,4 +1,5 @@
 ﻿using KartGame.KartSystems;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -53,10 +54,23 @@ public class ArcadeKartPowerup : MonoBehaviour {
                 kart.AddPowerup(this.boostStats);
                 onPowerupActivated.Invoke();
                 isCoolingDown = true;
+                TurnItOnOff();
 
-                if (disableGameObjectWhenActivated) this.gameObject.SetActive(false);
+
+
             }
         }
+    }
+    public void TurnItOnOff()
+    {
+        StartCoroutine(ReativarCaixa());
+        gameObject.SetActive(false);
+    }
+
+    IEnumerator ReativarCaixa()
+    {
+        yield return new WaitForSeconds(5f);
+        gameObject.SetActive(true);
     }
 
 }

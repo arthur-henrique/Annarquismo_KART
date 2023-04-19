@@ -18,18 +18,18 @@ public class VoltasContador : MonoBehaviour
     }
     void Start()
     {
-        lapsTexto1.text = "Laps: " + currentLaps.ToString();
-        lapsTexto2.text = "Laps: " + currentLaps2.ToString();
+        lapsTexto1.text = currentLaps2.ToString() + "/3";
+        lapsTexto2.text = currentLaps.ToString() + "/3";
     }
 
     public void IncreaseVoltas1(int v)
     {
         currentLaps += v;
-        lapsTexto1.text = "Laps: " + currentLaps.ToString();
+        lapsTexto1.text = currentLaps.ToString() + "/3";
     }
     public void IncreaseVoltas2(int v)
     {
         currentLaps2 += v;
-        lapsTexto2.text = "Laps: " + currentLaps2.ToString();
+        lapsTexto2.text =  currentLaps2.ToString() + "/3";
     }
 }

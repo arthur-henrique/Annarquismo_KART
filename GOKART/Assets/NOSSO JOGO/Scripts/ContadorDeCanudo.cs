@@ -15,12 +15,12 @@ public class ContadorDeCanudo : MonoBehaviour
     }
     void Start()
     {
-        canudoTexto.text = "Canudos: " + currentCanudos.ToString();
+        canudoTexto.text = "x" + currentCanudos.ToString();
     }
 
     public void IncreaseCanudos(int v)
     {
         currentCanudos += v;
-        canudoTexto.text = "Canudos: " + currentCanudos.ToString();
+        canudoTexto.text = "x" + currentCanudos.ToString();
     }
 }

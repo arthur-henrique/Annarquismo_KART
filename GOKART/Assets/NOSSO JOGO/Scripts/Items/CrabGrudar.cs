@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class CrabGrudar : MonoBehaviour
 {
+    public static CrabGrudar instanceCrab;
     public float slowDuration;
     private Rigidbody rb;
     
@@ -46,7 +47,7 @@ public class CrabGrudar : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    IEnumerator KillTheCrab()
+        public IEnumerator KillTheCrab()
     {
         yield return new WaitForSeconds(5f);
         gameObject.SetActive(false);

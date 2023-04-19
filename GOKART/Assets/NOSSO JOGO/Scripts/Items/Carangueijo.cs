@@ -10,7 +10,9 @@ public class Carangueijo : MonoBehaviour, IUsable
     public void Use(ArcadeKart kart)
     {
         SpawnarCrab();
-       
+        StartCoroutine(CrabGrudar.instanceCrab.KillTheCrab());
+
+
     }
     void SpawnarCrab()
     {
@@ -18,5 +20,6 @@ public class Carangueijo : MonoBehaviour, IUsable
         GameObject sprtiteItem = item.itemHandler.slots[item.i].transform.GetChild(item.randomNumber).gameObject;
         sprtiteItem.SetActive(false);
         item.itemHandler.isFull[item.i] = false;
+        
     }
 }
