@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VoltasContador : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class VoltasContador : MonoBehaviour
 
 
     public TMP_Text lapsTexto1, lapsTexto2;
-    private int totalDeVoltas = 3;
+    public int totalDeVoltas = 3;
     public int currentLaps = 0;
     public int currentLaps2 = 0;
     private void Awake()
@@ -20,6 +21,15 @@ public class VoltasContador : MonoBehaviour
     {
         lapsTexto1.text = currentLaps2.ToString() + "/3";
         lapsTexto2.text = currentLaps.ToString() + "/3";
+    }
+    private void Update()
+    {   
+
+        if (currentLaps == totalDeVoltas || currentLaps2 == totalDeVoltas)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
+        
     }
 
     public void IncreaseVoltas1(int v)

@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class PegarCanudo : MonoBehaviour
 {
+    Rigidbody rb;
     public int value;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     private void OnTriggerEnter(Collider other)
     {
+        rb = other.attachedRigidbody;
+        var checkarPlayer = other.GetComponent<ItemHandler>();
+        if (checkarPlayer.isPlayer1)
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
             ContadorDeCanudo.instance.IncreaseCanudos(value);
         }
+        if (checkarPlayer.isPlayer2)
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Destroy(gameObject);
+                ContadorDeCanudo.instance.IncreaseCanudos2(value);
+            }
+
+
     }
 }

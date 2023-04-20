@@ -7,8 +7,8 @@ public class ContadorDeCanudo : MonoBehaviour
 {
     public static ContadorDeCanudo instance;
 
-    public TMP_Text canudoTexto;
-    public int currentCanudos = 0;
+    public TMP_Text canudoTexto, canudoTexto2;
+    public int currentCanudos = 0, currentCanudos2 = 0;
     private void Awake()
     {
         instance = this;
@@ -16,11 +16,17 @@ public class ContadorDeCanudo : MonoBehaviour
     void Start()
     {
         canudoTexto.text = "x" + currentCanudos.ToString();
+        canudoTexto2.text = "x" + currentCanudos2.ToString();
     }
 
     public void IncreaseCanudos(int v)
     {
         currentCanudos += v;
         canudoTexto.text = "x" + currentCanudos.ToString();
+    }
+    public void IncreaseCanudos2(int v)
+    {
+        currentCanudos2 += v;
+        canudoTexto2.text = "x" + currentCanudos2.ToString();
     }
 }

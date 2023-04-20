@@ -55,6 +55,11 @@ public class BaiacuExplosao : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            
+            anim.SetTrigger("HIT");
+        }
     }
 
     public void EventToCall()
