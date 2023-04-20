@@ -25,23 +25,12 @@ public class ArcadeKartPowerup : MonoBehaviour {
     }
 
 
-    private void Update()
-    {
-        if (isCoolingDown) { 
 
-            if (Time.time - lastActivatedTimestamp > cooldown) {
-                //finished cooldown!
-                isCoolingDown = false;
-                onPowerupFinishCooldown.Invoke();
-            }
-
-        }
-    }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isCoolingDown) return;
+        
 
         var rb = other.attachedRigidbody;
         if (rb) {
@@ -49,28 +38,22 @@ public class ArcadeKartPowerup : MonoBehaviour {
             var kart = rb.GetComponent<ArcadeKart>();
 
             if (kart)
-            { 
+            {
+                if (boostStats.ElapsedTime != 0)
+                {
+                    boostStats.ElapsedTime = 0;
+                }
                 lastActivatedTimestamp = Time.time;
                 kart.AddPowerup(this.boostStats);
                 onPowerupActivated.Invoke();
                 isCoolingDown = true;
-                TurnItOnOff();
-
-
-
             }
         }
-    }
-    public void TurnItOnOff()
-    {
-        StartCoroutine(ReativarCaixa());
-        gameObject.SetActive(false);
+               
     }
 
-    IEnumerator ReativarCaixa()
-    {
-        yield return new WaitForSeconds(5f);
-        gameObject.SetActive(true);
-    }
+
+
+  
 
 }

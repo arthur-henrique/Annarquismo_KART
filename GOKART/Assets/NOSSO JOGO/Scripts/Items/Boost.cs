@@ -20,19 +20,10 @@ public class Boost : MonoBehaviour, IUsable
     {
     
         AtivarBoost(kart);
-        print("HasUsedItem");
-        print(kart.currentSpeed);
+      
         
     }
 
-
-    //IEnumerator PowerCountDown(ArcadeKart kart)
-    //{
-    //    yield return new WaitForSeconds(boostDuration);
-    //    kart.boostPower -= amountToBoost ;
-    //    kart.m_FinalStats.Acceleration -= amountToBoost;
-
-    //}
 
     void AtivarBoost(ArcadeKart kart)
     {
@@ -44,9 +35,9 @@ public class Boost : MonoBehaviour, IUsable
         {
             boostStats.ElapsedTime = 0;
         }
-        GameObject sprtiteItem = item.itemHandler.slots[item.i].transform.GetChild(item.randomNumber).gameObject;
+        GameObject sprtiteItem = item.itemHandler.slots.transform.GetChild(1).gameObject;
         sprtiteItem.SetActive(false);
-        item.itemHandler.isFull[item.i] = false;
+        item.itemHandler.isFull = false;
     }
 
 }

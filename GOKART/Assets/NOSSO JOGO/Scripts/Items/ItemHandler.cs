@@ -8,8 +8,8 @@ public class ItemHandler : MonoBehaviour
     public static ItemHandler InstanceItemHandler;
     public bool _hasItem;
     public GameObject item;
-    public bool[] isFull;
-    public GameObject[] slots;
+    public bool isFull;
+    public GameObject slots;
     public ArcadeKart kart;
     public ItemCollider itemCollider;
     public bool isPlayer1, isPlayer2;

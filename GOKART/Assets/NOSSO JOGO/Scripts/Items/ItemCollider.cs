@@ -16,9 +16,11 @@ public class ItemCollider : MonoBehaviour
     public int randomNumber;
     public GameObject crab;
     private Rigidbody rb;
-    public int i = 0;
     public ItemHandler itemHandler;
     public GameObject tuba;
+    GameObject sprtiteItem;
+
+
 
 
 
@@ -57,11 +59,11 @@ public class ItemCollider : MonoBehaviour
                 {
                     
                     
-                        if (itemHandler.isFull[i] == false)
+                        if (itemHandler.isFull == false)
                         {
 
-                            itemHandler.isFull[i] = true;
-                            GameObject sprtiteItem = itemHandler.slots[i].transform.GetChild(randomNumber).gameObject;
+                            itemHandler.isFull = true;
+                            sprtiteItem = itemHandler.slots.transform.GetChild(randomNumber).gameObject;
                             sprtiteItem.SetActive(true);
                             
                         }

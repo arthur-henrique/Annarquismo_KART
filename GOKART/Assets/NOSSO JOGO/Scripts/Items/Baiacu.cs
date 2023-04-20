@@ -23,9 +23,9 @@ public class Baiacu : MonoBehaviour, IUsable
     {
        
         Instantiate(baiacu, item.baiacuSpawn.position, item.baiacuSpawn.rotation);
-        GameObject sprtiteItem =item.itemHandler.slots[item.i].transform.GetChild(item.randomNumber).gameObject;
+        GameObject sprtiteItem =item.itemHandler.slots.transform.GetChild(0).gameObject;
         sprtiteItem.SetActive(false);
-        item.itemHandler.isFull[item.i] = false;
+        item.itemHandler.isFull = false;
     }
    
 
