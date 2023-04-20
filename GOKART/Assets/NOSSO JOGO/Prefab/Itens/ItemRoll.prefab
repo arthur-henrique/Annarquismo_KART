@@ -101,60 +101,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819731, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 4062719156195989250}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 4062719157753877884}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0972d5f454af3134982862eba4002508, type: 3}
---- !u!1 &4062719156195989250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5957619099666720573, guid: 0972d5f454af3134982862eba4002508,
-    type: 3}
-  m_PrefabInstance: {fileID: 7695555058335428671}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4062719157753877884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5957619101258163523, guid: 0972d5f454af3134982862eba4002508,
-    type: 3}
-  m_PrefabInstance: {fileID: 7695555058335428671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4941945631065565358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3339783971226507409, guid: 0972d5f454af3134982862eba4002508,
@@ -228,60 +176,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819731, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 4062719156219789981}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 4062719156804600035}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0972d5f454af3134982862eba4002508, type: 3}
---- !u!1 &4062719156219789981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5957619099666720573, guid: 0972d5f454af3134982862eba4002508,
-    type: 3}
-  m_PrefabInstance: {fileID: 7695555059350791584}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4062719156804600035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5957619101258163523, guid: 0972d5f454af3134982862eba4002508,
-    type: 3}
-  m_PrefabInstance: {fileID: 7695555059350791584}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4941945630570298673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3339783971226507409, guid: 0972d5f454af3134982862eba4002508,
@@ -355,60 +251,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819731, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: spritesItem.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 4062719157206246171}
-    - target: {fileID: 5957619100508819732, guid: 0972d5f454af3134982862eba4002508,
-        type: 3}
-      propertyPath: possibleItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 4062719156617175397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0972d5f454af3134982862eba4002508, type: 3}
---- !u!1 &4062719156617175397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5957619101258163523, guid: 0972d5f454af3134982862eba4002508,
-    type: 3}
-  m_PrefabInstance: {fileID: 7695555059480020006}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4062719157206246171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5957619099666720573, guid: 0972d5f454af3134982862eba4002508,
-    type: 3}
-  m_PrefabInstance: {fileID: 7695555059480020006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4941945632068443319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3339783971226507409, guid: 0972d5f454af3134982862eba4002508,

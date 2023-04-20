@@ -15,6 +15,10 @@ public class CrabGrudar : MonoBehaviour
         MaxTime = 5
     };
     public UnityEvent onPowerupActivated;
+    private void Awake()
+    {
+        CrabGrudar.instanceCrab = this;
+    }
     private void Start()
     {
         StartCoroutine(KillTheCrab());   

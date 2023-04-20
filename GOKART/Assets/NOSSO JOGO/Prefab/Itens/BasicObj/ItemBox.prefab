@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2673518457131025228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 520130439207057992}
+  - component: {fileID: 6618726554343474000}
+  m_Layer: 0
+  m_Name: Tubarao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &520130439207057992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673518457131025228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9004099534253599172}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6618726554343474000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673518457131025228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc7e193dcad04f409bd2247c6164831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tubaObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  userKart: {fileID: 0}
+  itemCollider: {fileID: 9004099534253599171}
+  boostStats:
+    modifiers:
+      TopSpeed: 90
+      Acceleration: 50
+      ReverseSpeed: 0
+      ReverseAcceleration: 0
+      AccelerationCurve: 0
+      Braking: 0
+      CoastingDrag: 0
+      Grip: 0
+      Steer: 0
+      AddedGravity: 0
+    PowerUpID: 
+    ElapsedTime: 0
+    MaxTime: 5
+  onPowerupActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  onPowerupFinishCooldown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9004099534253599192
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +107,7 @@ Transform:
   - {fileID: 9004099534698621501}
   - {fileID: 9004099535423447016}
   - {fileID: 9004099534833851794}
+  - {fileID: 520130439207057992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,15 +190,18 @@ MonoBehaviour:
   - {fileID: 9004099534698621502}
   - {fileID: 9004099535423447018}
   - {fileID: 9004099534833851796}
-  spritesItem: []
+  - {fileID: 2673518457131025228}
   randomItem: {fileID: 0}
   anim: {fileID: 9004099534253599170}
+  defaultCam: {fileID: 0}
+  tubaCam: {fileID: 0}
   meshRenderer: {fileID: 9004099534253599174}
   box: {fileID: 9004099534253599175}
   baiacuSpawn: {fileID: 0}
   randomNumber: 0
   crab: {fileID: 0}
-  i: 0
+  itemHandler: {fileID: 0}
+  tuba: {fileID: 0}
 --- !u!95 &9004099534253599170
 Animator:
   serializedVersion: 5
@@ -192,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baiacu: {fileID: 3594722186945317909, guid: a193a7f4dd1bba8448e7a7f3005c9cad, type: 3}
-  item: {fileID: 0}
+  item: {fileID: 9004099534253599171}
 --- !u!1 &9004099534833851796
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51a32ddf6637ed43a3c57ab72f11914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 9004099534253599171}
 --- !u!1 &9004099535423447018
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8050ade6531054544972ce8f9f09d005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 9004099534253599171}
   boostStats:
     modifiers:
       TopSpeed: 70

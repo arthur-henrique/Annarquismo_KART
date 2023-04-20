@@ -192,6 +192,7 @@ namespace KartGame.KartSystems
         public Vector3 posToSpawn;
         public Quaternion rotationToSpawn;
         public bool canBeEffected = true;
+        public int driftSide;
 
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
@@ -580,6 +581,14 @@ namespace KartGame.KartSystems
                     float driftBoostM = 1.5f;
                     float driftBoostL = 2.5f;
 
+                    if(turnInput > 0)
+                    {
+                        driftSide = 1;
+                    }
+                    else if (turnInput < 0)
+                    {
+                        driftSide= -1;
+                    }
                     float turnInputAbs = Mathf.Abs(turnInput);
                     if (turnInputAbs < k_NullInput)
                         m_DriftTurningPower = Mathf.MoveTowards(m_DriftTurningPower, 0.0f, Mathf.Clamp01(DriftDampening * Time.fixedDeltaTime));

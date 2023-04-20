@@ -20,19 +20,6 @@ public class ItemCollider : MonoBehaviour
     public GameObject tuba;
     GameObject sprtiteItem;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     private void OnTriggerEnter(Collider other)
     {
         rb = other.attachedRigidbody;
@@ -44,8 +31,8 @@ public class ItemCollider : MonoBehaviour
 
 
                     defaultCam = rb.transform.GetChild(4).GetComponent<CinemachineVirtualCamera>();
-                    tubaCam = rb.transform.GetChild(8).GetComponent<CinemachineVirtualCamera>();
-                    tuba = rb.transform.GetChild(7).gameObject;
+                    tubaCam = rb.transform.GetChild(7).GetComponent<CinemachineVirtualCamera>();
+                    tuba = rb.transform.GetChild(6).gameObject;
 
                     baiacuSpawn = rb.transform.GetChild(6);
                     crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;

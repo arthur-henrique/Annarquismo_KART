@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Events;
+using static UnityEditor.Progress;
 
 public class Tubarao : MonoBehaviour, IUsable
 {
@@ -31,6 +32,10 @@ public class Tubarao : MonoBehaviour, IUsable
         itemCollider.defaultCam.Priority = 0;
         itemCollider.tubaCam.Priority = 10;
         userKart = kart;
+
+        GameObject sprtiteItem = itemCollider.itemHandler.slots.transform.GetChild(3).gameObject;
+        sprtiteItem.SetActive(false);
+        itemCollider.itemHandler.isFull = false;
         StartCoroutine(Destubarar());
     }
 

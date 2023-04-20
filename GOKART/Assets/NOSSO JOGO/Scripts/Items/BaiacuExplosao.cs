@@ -11,12 +11,18 @@ public class BaiacuExplosao : MonoBehaviour
     [SerializeField] float maxTempStun;
     bool stunado, stunadoOver;
     public Animator anim;
+    AnimatorController peixeAnim;
    
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
         MaxTime = 5
     };
     public UnityEvent onPowerupActivated;
+
+    private void Start()
+    {
+        peixeAnim = AnimatorController.instance;
+    }
     private void Update()
     {
         if (stunado)
@@ -45,6 +51,7 @@ public class BaiacuExplosao : MonoBehaviour
                     //kart.AddPowerup(this.boostStats);
                     //onPowerupActivated.Invoke();
                     stunado = true;
+                    peixeAnim.BeginStun();
                 }
             }
         }
@@ -64,6 +71,7 @@ public class BaiacuExplosao : MonoBehaviour
     {
         yield return new WaitForSeconds(maxTempStun);
         rb.constraints = RigidbodyConstraints.None;
+        peixeAnim.FinishStun();
         Destroy(transform.parent.gameObject);
         
     }
