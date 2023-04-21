@@ -13,6 +13,8 @@ public class VoltasContador : MonoBehaviour
     public int totalDeVoltas = 3;
     public int currentLaps = 0;
     public int currentLaps2 = 0;
+    public Animator transition;
+    public float transitionTime = 1f;
     private void Awake()
     {
         contadorInstance = this;
@@ -27,12 +29,18 @@ public class VoltasContador : MonoBehaviour
 
         if (currentLaps == totalDeVoltas || currentLaps2 == totalDeVoltas)
         {
-            SceneManager.LoadScene("WinScene");
+            StartCoroutine(LoadLevel());
         }
         
     }
+    public IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene("WinScene");
+    }
 
-    public void IncreaseVoltas1(int v)
+        public void IncreaseVoltas1(int v)
     {
         currentLaps += v;
         lapsTexto1.text = currentLaps.ToString() + "/3";

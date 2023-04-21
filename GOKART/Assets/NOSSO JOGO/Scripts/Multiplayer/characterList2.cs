@@ -8,8 +8,10 @@ public class characterList2 : MonoBehaviour
 
     public GameObject[] characterList;
     public int index2;
-    
-   
+    public Animator transition;
+    public float transitionTime = 1f;
+
+
 
 
 
@@ -66,7 +68,13 @@ public class characterList2 : MonoBehaviour
     }
     public void ConfirmButton()
     {
-        PlayerPrefs.SetInt("CharacterSelect2", index2);
+        PlayerPrefs.SetInt("CharacterSelect", index2);
+        StartCoroutine(LoadLevel());
+    }
+    public IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(MenuController.instance.faseParaCarregar);
     }
     public void Botao0()

@@ -22,7 +22,7 @@ public class BaiacuColocar : MonoBehaviour, IUsable
     {
         
         gameObject.SetActive(false);
-        GameObject sprtiteItem =ItemCollider.instanceCollider.itemHandler.slots.transform.GetChild(0).gameObject;
+        GameObject sprtiteItem =item.slots.transform.GetChild(0).gameObject;
         sprtiteItem.SetActive(false);
         Instantiate(baiacu, firepoint.position , firepoint.rotation);
     }

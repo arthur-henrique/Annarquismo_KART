@@ -9,10 +9,12 @@ public class CharacterSelection : MonoBehaviour
    
     public int index;
     public Camera cam1, cam2;
-   
-    
-   
-    
+    public Animator transition;
+    public float transitionTime = 1f;
+
+
+
+
 
     private void Start()
     {
@@ -77,6 +79,12 @@ public class CharacterSelection : MonoBehaviour
     public void ConfirmButton()
     {
         PlayerPrefs.SetInt("CharacterSelect", index);
+        StartCoroutine(LoadLevel());
+    }
+    public IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(MenuController.instance.faseParaCarregar);
     }
     public void Botao0()

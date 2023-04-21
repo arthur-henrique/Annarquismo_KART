@@ -272,6 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faseParaCarregar: 
   proximaCena: CharaSelection
+  transition: {fileID: 227734971}
+  transitionTime: 1
 --- !u!4 &52001381
 Transform:
   m_ObjectHideFlags: 0
@@ -364,6 +366,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5196279743855809608, guid: f2cc5c5a60cacd346bcf006e21435ce1,
+        type: 3}
+      propertyPath: m_Name
+      value: ImageDentro
+      objectReference: {fileID: 0}
     - target: {fileID: 7789912744006088270, guid: f2cc5c5a60cacd346bcf006e21435ce1,
         type: 3}
       propertyPath: m_SortingOrder
@@ -371,6 +378,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2cc5c5a60cacd346bcf006e21435ce1, type: 3}
+--- !u!95 &227734971 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2983891118426996447, guid: f2cc5c5a60cacd346bcf006e21435ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 227734970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &354200163
 GameObject:
   m_ObjectHideFlags: 0
