@@ -19,9 +19,13 @@ public class CrabGrudar : MonoBehaviour
     {
         CrabGrudar.instanceCrab = this;
     }
-    private void Start()
+    //private void Start()
+    //{
+    //    StartCoroutine(KillTheCrab());   
+    //}
+    private void FixedUpdate()
     {
-        StartCoroutine(KillTheCrab());   
+        StartCoroutine(KillTheCrab());
     }
     private void OnTriggerEnter(Collider other)
     {

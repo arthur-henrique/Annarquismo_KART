@@ -6,19 +6,25 @@ using UnityEngine.UI;
 
 public class ItemCollider : MonoBehaviour
 {
+    public static ItemCollider instanceCollider;
     public GameObject[] possibleItems;
     public GameObject randomItem;
     public Animator anim;
     public CinemachineVirtualCamera defaultCam, tubaCam;
     public MeshRenderer meshRenderer;
     public BoxCollider box;
-    public Transform baiacuSpawn;
+    public GameObject baiacuSpawn;
     public int randomNumber;
     public GameObject crab;
     private Rigidbody rb;
     public ItemHandler itemHandler;
     public GameObject tuba;
     GameObject sprtiteItem;
+
+    private void Awake()
+    {
+        instanceCollider = this;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,7 +40,7 @@ public class ItemCollider : MonoBehaviour
                     tubaCam = rb.transform.GetChild(7).GetComponent<CinemachineVirtualCamera>();
                     tuba = rb.transform.GetChild(6).gameObject;
 
-                    baiacuSpawn = rb.transform.GetChild(6);
+                    baiacuSpawn = rb.transform.Find("FirePoint").transform.Find("Pufferfish").gameObject;
                     crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
                     randomNumber = Random.Range(0, possibleItems.Length);
                     randomItem = possibleItems[randomNumber];

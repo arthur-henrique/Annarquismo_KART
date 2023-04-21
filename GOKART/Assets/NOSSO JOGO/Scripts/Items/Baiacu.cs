@@ -21,11 +21,10 @@ public class Baiacu : MonoBehaviour, IUsable
 
     void ColocarBaiacu()
     {
-       
-        Instantiate(baiacu, item.baiacuSpawn.position, item.baiacuSpawn.rotation);
-        GameObject sprtiteItem =item.itemHandler.slots.transform.GetChild(0).gameObject;
-        sprtiteItem.SetActive(false);
+
+        item.baiacuSpawn.SetActive(true);
         item.itemHandler.isFull = false;
+       
     }
    
 
