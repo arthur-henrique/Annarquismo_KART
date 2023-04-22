@@ -21,7 +21,7 @@ public class BaiacuExplosao : MonoBehaviour
 
     private void Start()
     {
-        peixeAnim = AnimatorController.instance;
+        //peixeAnim = AnimatorController.instance;
     }
     private void Update()
     {
@@ -37,7 +37,7 @@ public class BaiacuExplosao : MonoBehaviour
         if(!other.CompareTag("Shark"))
         {
             rb = other.attachedRigidbody;
-
+            peixeAnim = other.GetComponent<AnimatorPicker>().officialAnimator;
             if (rb)
             {
                 var kart = rb.GetComponent<ArcadeKart>();

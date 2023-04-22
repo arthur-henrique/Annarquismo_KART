@@ -5,16 +5,11 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
-    public static AnimatorController instance;
     public Animator anim;
     public bool isNadando, isNocauteado, isDrifting;
     public int driftSide;
     public ArcadeKart kart;
 
-    private void Awake()
-    {
-        instance = this;
-    }
     private void FixedUpdate()
     {
         if(kart.currentSpeed > 1)
