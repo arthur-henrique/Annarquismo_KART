@@ -518,7 +518,7 @@ namespace KartGame.KartSystems
                 if (m_InAir)
                 {
                     m_InAir = false;
-                    Instantiate(JumpVFX, transform.position, Quaternion.identity);
+                    //Instantiate(JumpVFX, transform.position, Quaternion.identity);
                 }
 
                 // manual angular velocity coefficient
