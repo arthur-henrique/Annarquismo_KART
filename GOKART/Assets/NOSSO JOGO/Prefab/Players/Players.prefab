@@ -311,7 +311,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527839474593703327}
-  m_LocalRotation: {x: 0.15230131, y: 0.0022495047, z: -0.00034664737, w: 0.9883315}
+  m_LocalRotation: {x: 0.15230131, y: 0.0022495217, z: -0.00034665, w: 0.9883315}
   m_LocalPosition: {x: 0.1895126, y: 3.5474894, z: -6.4049163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7254,7 +7254,7 @@ MonoBehaviour:
     CoastingDrag: 10
     Grip: 1
     Steer: 4
-    AddedGravity: 7
+    AddedGravity: 4
   m_VisualWheels:
   - {fileID: 0}
   - {fileID: 0}
@@ -8316,7 +8316,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8096505859703909855}
-  m_LocalRotation: {x: 0.15230131, y: 0.0022495047, z: -0.00034664737, w: 0.9883315}
+  m_LocalRotation: {x: 0.15230131, y: 0.0022495217, z: -0.00034665, w: 0.9883315}
   m_LocalPosition: {x: 7.380005, y: 7.300003, z: -12.419992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8782,7 +8782,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9173540105702600017}
-  m_LocalRotation: {x: 0.08951866, y: 0.0000000042843253, z: -3.8507308e-10, w: 0.99598515}
+  m_LocalRotation: {x: 0.08951866, y: -0.0000000042843253, z: 3.8507308e-10, w: 0.99598515}
   m_LocalPosition: {x: -373.4, y: 84.520004, z: 5.540001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11597,12 +11597,12 @@ PrefabInstance:
     - target: {fileID: 4325578627969177305, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000085081195
+      value: -0.0000000085079614
       objectReference: {fileID: 0}
     - target: {fileID: 4325578627969177305, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000012754556
+      value: 0.0000000012754319
       objectReference: {fileID: 0}
     - target: {fileID: 4799013463511170076, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}
@@ -11642,12 +11642,12 @@ PrefabInstance:
     - target: {fileID: 4917343309924345593, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042843253
+      value: -0.000000004284298
       objectReference: {fileID: 0}
     - target: {fileID: 4917343309924345593, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.8507308e-10
+      value: 3.8507067e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4917343309924345594, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}
@@ -11714,6 +11714,16 @@ PrefabInstance:
         type: 3}
       propertyPath: baseStats.Steer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495213790429871361, guid: 4ed431d3798f671469f97e05614db4aa,
+        type: 3}
+      propertyPath: baseStats.AddedGravity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495213790429871362, guid: 4ed431d3798f671469f97e05614db4aa,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6495213790429871363, guid: 4ed431d3798f671469f97e05614db4aa,
         type: 3}

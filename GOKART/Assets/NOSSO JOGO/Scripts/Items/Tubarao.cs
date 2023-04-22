@@ -12,6 +12,7 @@ public class Tubarao : MonoBehaviour, IUsable
     //public CinemachineVirtualCamera defaultCam, tubaCam;
     public ArcadeKart userKart;
     public ItemCollider itemCollider;
+    
 
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
@@ -31,6 +32,7 @@ public class Tubarao : MonoBehaviour, IUsable
         AtivarBoost(kart);
         itemCollider.defaultCam.Priority = 0;
         itemCollider.tubaCam.Priority = 10;
+        itemCollider.rb.interpolation = RigidbodyInterpolation.Extrapolate;
         userKart = kart;
 
         GameObject sprtiteItem = itemCollider.itemHandler.slots.transform.GetChild(3).gameObject;
@@ -45,6 +47,7 @@ public class Tubarao : MonoBehaviour, IUsable
         itemCollider.tuba.SetActive(false);
         itemCollider.defaultCam.Priority = 10;
         itemCollider.tubaCam.Priority = 0;
+        itemCollider.rb.interpolation = RigidbodyInterpolation.Interpolate;
     }
 
     void AtivarBoost(ArcadeKart kart)

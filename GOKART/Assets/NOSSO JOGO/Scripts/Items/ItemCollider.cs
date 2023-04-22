@@ -16,7 +16,7 @@ public class ItemCollider : MonoBehaviour
     public GameObject baiacuSpawn;
     public int randomNumber;
     public GameObject crab;
-    private Rigidbody rb;
+    public Rigidbody rb;
     public ItemHandler itemHandler;
     public GameObject tuba;
     GameObject sprtiteItem;
