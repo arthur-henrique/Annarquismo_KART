@@ -10,9 +10,9 @@ public class VoltasContador : MonoBehaviour
 
 
     public TMP_Text lapsTexto1, lapsTexto2;
-    public int totalDeVoltas = 3;
-    public int currentLaps = 0;
-    public int currentLaps2 = 0;
+    public int totalDeVoltas = 4;
+    public int currentLaps = 1;
+    public int currentLaps2 = 1;
     public Animator transition;
     public float transitionTime = 1f;
     private void Awake()
