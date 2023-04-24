@@ -31,12 +31,12 @@ public class ItemHandler : MonoBehaviour
     }
 
     private void Update()
-    {  
-
-        if(Input.GetKeyDown(KeyCode.LeftShift) && isPlayer1)
+    {
+        if (_hasItem && item != null)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && isPlayer1)
         {
-            if(_hasItem && item != null)
-            {
+           
+            
                 _hasItem = false;
                 if (item.TryGetComponent(out IUsable usableItem))
                 {
@@ -45,11 +45,12 @@ public class ItemHandler : MonoBehaviour
 
                 }
                 
-            }
+            
         }
-        else if (Input.GetKeyDown(KeyCode.RightShift) && isPlayer2)
+             if (_hasItem && item != null)
+            if (Input.GetKeyDown(KeyCode.RightShift) && isPlayer2)
         {
-            if (_hasItem && item != null)
+           
             {
                 _hasItem = false;
                 if (item.TryGetComponent(out IUsable usableItem))

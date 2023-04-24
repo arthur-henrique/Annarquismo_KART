@@ -3012,12 +3012,22 @@ PrefabInstance:
     - target: {fileID: 5111517552333085906, guid: f2cc5c5a60cacd346bcf006e21435ce1,
         type: 3}
       propertyPath: transitionTime
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111517552333085906, guid: f2cc5c5a60cacd346bcf006e21435ce1,
+        type: 3}
+      propertyPath: cenaParaCarregar
+      value: FaseSelection
       objectReference: {fileID: 0}
     - target: {fileID: 5111517552333085908, guid: f2cc5c5a60cacd346bcf006e21435ce1,
         type: 3}
       propertyPath: m_Name
       value: ModeSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111517552333085908, guid: f2cc5c5a60cacd346bcf006e21435ce1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5111517552333085909, guid: f2cc5c5a60cacd346bcf006e21435ce1,
         type: 3}

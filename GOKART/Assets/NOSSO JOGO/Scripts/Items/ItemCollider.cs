@@ -30,38 +30,41 @@ public class ItemCollider : MonoBehaviour
     {
         rb = other.attachedRigidbody;
         itemHandler = other.GetComponent<ItemHandler>();
-        
-        
+
+        if (!itemHandler._hasItem)
+        {
+
+
             if (other.CompareTag("Player"))
             {
 
 
-                    defaultCam = rb.transform.GetChild(4).GetComponent<CinemachineVirtualCamera>();
-                    tubaCam = rb.transform.GetChild(7).GetComponent<CinemachineVirtualCamera>();
-                    tuba = rb.transform.GetChild(6).gameObject;
+                defaultCam = rb.transform.GetChild(4).GetComponent<CinemachineVirtualCamera>();
+                tubaCam = rb.transform.GetChild(7).GetComponent<CinemachineVirtualCamera>();
+                tuba = rb.transform.GetChild(6).gameObject;
 
-                    baiacuSpawn = rb.transform.Find("FirePoint").transform.Find("Pufferfish").gameObject;
-                    crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
-                    randomNumber = Random.Range(0, possibleItems.Length);
-                    randomItem = possibleItems[randomNumber];
-                    other.GetComponent<ItemHandler>().HasItem(true, randomItem);
+                baiacuSpawn = rb.transform.Find("FirePoint").transform.Find("Pufferfish").gameObject;
+                crab = rb.transform.Find("CaranguejoSpawn").transform.Find("Crab").gameObject;
+                randomNumber = Random.Range(0, possibleItems.Length);
+                randomItem = possibleItems[randomNumber];
+                other.GetComponent<ItemHandler>().HasItem(true, randomItem);
 
 
-               
+
                 if (randomItem != null)
                 {
-                    
-                    
-                        if (itemHandler.isFull == false)
-                        {
 
-                            itemHandler.isFull = true;
-                            sprtiteItem = itemHandler.slots.transform.GetChild(randomNumber).gameObject;
-                            sprtiteItem.SetActive(true);
-                            
-                        }
 
-                    
+                    if (itemHandler.isFull == false)
+                    {
+
+                        itemHandler.isFull = true;
+                        sprtiteItem = itemHandler.slots.transform.GetChild(randomNumber).gameObject;
+                        sprtiteItem.SetActive(true);
+
+                    }
+
+
 
 
 
@@ -70,13 +73,19 @@ public class ItemCollider : MonoBehaviour
                 anim.SetTrigger("GOT");
 
 
-                   
-                
-            
 
-            
+
+
+
+
 
             }
+            
+        }
+        else
+        {
+            anim.SetTrigger("GOT");
+        }
     }
 
     public void TurnItOnOff()
